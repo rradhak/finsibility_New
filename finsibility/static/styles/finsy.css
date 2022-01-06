@@ -1,0 +1,384 @@
+html, body {height: 100%}
+
+.main_container{
+    width: 100%;
+    height: 100%;
+}
+/* top panel */
+.main_top{
+    width: 100%;
+    height: 10%;
+    background-color: #232A34;
+}
+/* middle menu panel */
+.main_menu{
+    width: 100%;
+    height: 5%;
+    background-color: white;
+}
+/* main menu start */
+.rounded_border{
+  float: left;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 20px;
+  padding: 1%;
+}
+
+/* bottom panel */
+.main_bottom{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/static/images/train_sun.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: none;
+}
+/* main section is over */
+
+
+/* start top panel panel */
+.left_header{
+    height: 100%;  /* height of main top */
+}
+.header_logo{
+    float: left;
+    width: 16%;
+    height: 100%;
+    margin-left: 1%;
+    background-image: url('/static/images/logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* Logo */
+.finsibility_text_short{
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 44px;
+  color: #D2691E;
+  height: 40%;
+  width: 100%;
+}
+.white_line{
+  color: white;
+  width: 38%;
+  height: 9%;
+}
+.finsibility_text_long{
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 22px;
+  color: #D2691E;
+  width: 100%;
+  height: 33%
+}
+
+/* Greetings and Hamburger menu*/
+/* greetings and hamburger menu */
+.header_menu{
+    float: right;
+    width: 35%;
+}
+.greetings_panel{
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+.greetings_text{
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 28px;
+  color: white;
+  text-align: right;
+  padding-right: 9px;
+}
+/* main_top ended */
+
+.hamburger_panel{
+    float: right;
+    width: 25%;
+}
+/* hamberger menu */
+.hamburger_menu {
+  float: right;
+  display: block;
+  cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+
+
+.login_text{
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 28px;
+  color: white;
+  text-align: right;
+  padding-right: 6px;
+  cursor: pointer;
+}
+.logout_text{
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 28px;
+  color: white;
+  text-align: right;
+  padding-right: 6px;
+  cursor: pointer;
+
+}
+a:visited{
+    color: #232A34;
+}
+a:link, a:active{
+    color: #232A34;
+    text-decoration: none;
+}
+a:hover{
+    color: #D2691E;
+}
+
+.new_user, .register_link{
+  position: relative;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 28px;
+  text-align: left;
+  padding-left: 5px;
+  white-space: nowrap;
+}
+.hidden_user_name{
+    display: none;
+}
+
+/* end of Login, Logo, Greetings, and manu */
+input, .file_btn, .upload_btn{
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 20px;
+}
+
+.menu_btn_1, .menu_btn_2{
+    float: left;
+}
+
+.disclaimer_1{
+    white-space: pre-line;
+    resize: none;
+    word-wrap: break-word;
+    overflow: hidden;
+    margin: 2%;
+    float: left;
+    width: 45%;
+    top: 5%;
+    left: 3%;
+    color: white;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 30px;
+    padding: 1%;
+}
+
+.upload_positions{
+  width: 40%;
+  height: 30%;
+  display: table;
+  background-color: white;
+  border-radius: 25px;
+  border: 2px solid #fff;
+}
+
+.upload_positions_panel{
+
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 20px;
+  padding: 2%;
+  width: 80%;
+  height: 24%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.upload_new_file{
+    font-size: 30px;
+}
+
+.upload_positions_data_panel{
+  margin-top: 1%;
+  left: 3%;
+  right: 3%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  background-color: white;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 30px;
+  width: 95%;
+  height: 98%;
+  display: none;
+  /*overflow-y: scroll;*/
+}
+
+.form_div{
+    float: left;
+}
+
+.positions_table{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana;
+  font-size: 16px;
+  height: 60%;
+  width: 88%;
+  float: left;
+  overflow-y: scroll;
+  padding-left: 4%;
+}
+
+/* table styles ---------- */
+
+
+table.dataframe, .dataframe th, .dataframe td {
+  border: none;
+  border-bottom: 1px solid #C8C8C8;
+  border-collapse: collapse;
+  text-align:left;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+
+}
+table.dataframe.table{
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+th {
+    background-color: #add8e6;
+    /*color: white;*/
+    color: black;
+}
+tr:nth-child(odd)		{ background-color:#eee; }
+tr:nth-child(even)	{ background-color:#fff; }
+tr:hover            { background-color: #ffff99;}
+
+
+.menu_panel{
+  float: left;
+  /*position: absolute;*/
+  left: 5%;
+  top: 3%;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  background-color: white;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 20px;
+  padding: 2%;
+  width: 40%;
+  height: 4%;
+}
+
+.data_panel{
+    margin-top: 0.5%;
+    width: 68%;
+    height: 60%;
+    padding: 1%;
+    border-radius: 25px;
+    background-color: white;
+}
+.table_panel{
+  float: left;
+  font-family: Verdana;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  background-color: white;
+  height: 95%;
+  width: 98%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+.medium_panel{
+  margin-top: 0.5%;
+  margin-left: 3%;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  background-color: white;
+  height: 70%;
+  width: 70%;
+  float: left;
+  padding: 3%
+}
+
+.inner_panel{
+    padding: 3%;
+    width: 70%;
+    height: 100%;
+    overflow-y: auto;
+}
+.new_user{
+    margin-left: 0.5%;
+    margin-right: 0.1%;
+    font-size: 26px;
+}
+.greetings_panel a:visited, a:link, a:active{
+    color: white;
+}
+
+.main_menu a:visited, a:link, a:active{
+    color: black;
+}
+
+.test_class_1{
+    width: 60%;
+    height: 23%;
+    background-color: white;
+    border-radius: 25px;
+    border: 2px solid #fff;
+    margin-top: 1%;
+    padding: 1%;
+}
+.data_panel_2{
+    margin-top: 1%;
+    width: 98%;
+    height: 60%;
+    padding: 1%;
+    border-radius: 25px;
+    background-color: white;
+}
+.test_class_2{
+    width: 65%;
+    height: 90%;
+}
+.test_class_3{
+    width: 98%;
+    height: 25%;
+    border-radius: 25px;
+    border: 2px solid #fff;
+    padding: 1%;
+    background-color: white;
+    margin-bottom: 1%;
+}

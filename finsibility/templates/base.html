@@ -1,0 +1,65 @@
+{% extends "base_flask.html" %}
+
+{% block title %}Finsibility{% endblock %}
+{% block head %}
+
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/finsy.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Quicksand:wght@300&family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+    <script src="{{url_for('static', filename='js/finsibility.js')}}"></script>
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/finsibility.js')}}"></script>
+    <script>
+        console.log('in base...');
+        $(document).ready(function(){
+            <!-- setting global variable -->
+            is_current_user_anonymous = {{ current_user.is_anonymous|int}};
+        });
+    </script>
+
+{% endblock %}
+
+{% block content %}
+<div class="main_container">
+    <div class="main_top">
+        <div class="left_header">
+            <div class="header_logo">
+                <!--
+                <div class="finsibility_text_short">Finsibility</div>
+                <div class="white_line"><hr></div>
+                <div class="finsibility_text_long">Financial Possibilities</div>
+                -->
+            </div>
+            <div class="header_menu">
+                <div class="greetings_panel" id="greetings_panel">
+                </div>
+                <div class="hamburger_panel">
+                    <div class="hamburger_menu" id="hamburger_menu" onclick="run_hamburger_menu(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main_menu">
+        <div class="rounded_border">Stock Insights2</div>
+        {% if not current_user.is_anonymous %}
+            <div id='upload_positions' class="rounded_border"><a href="{{url_for('upload_positions')}}">Upload Position</a></div>
+            <div class="rounded_border"><a href="{{ url_for('review_positions') }}">Review Positions</a></div>
+            <div class="rounded_border">Self Analysis</div>
+        {% endif %}
+    </div>
+    <div class="main_bottom">
+        {% block data_panel %}
+        {% endblock data_panel %}
+    </div>
+    <div class="hidden_user_name" id="hidden_user_name">{{current_user.username}}</div>
+</div>
+{% endblock %}

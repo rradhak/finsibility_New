@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block data_panel %}
+    <div class="menu_panel">
+        Pick a Date: <input type='date' id='position_date'>
+    </div>
+    <div class="data_panel">
+        <div class="table_panel" id="table_panel">
+            {% if tables: %}
+                {% for table in tables %}
+                    {{ table|safe }}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+

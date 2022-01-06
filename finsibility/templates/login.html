@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block data_panel %}
+<div class="medium_panel">
+    <div class="inner_panel">
+        <strong>Sign In</strong>
+        <form id="login_form" method="post" novalidate onsubmit="">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}<br>
+                {% for error in form.username.errors %}
+                    <span style='color: red;'>[{{error}}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+                {% for error in form.password.errors %}
+                    <span style='color: red;'>[{{error}}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.remember_me() }} {{form.remember_me.label }}</p>
+            <p>{{ form.submit() }} <span class="new_user">New User?</span> <a class="register_link" href="{{ url_for('register') }}">Click to Register!</a></p>
+            <!--<p><input type="button" value="Sign in" id="signin_btn"></input></p>-->
+        </form>
+
+        <div class="error">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {%for message in messages %}
+                            <l1 style="color: red">{{message}}</l1>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block data_panel %}
+    <div class="test_class_1" id="test_class_1">
+        {% if not tables: %}
+            <span class="upload_new_file">Upload new File</span>
+            <hr>
+            <script>
+                <!--document.getElementById("upload_positions_data_panel").style.display='none';-->
+                document.getElementById("test_class_1").style.display='block';
+            </script>
+            <form action="/upload_positions_file" method='post' enctype='multipart/form-data'>
+                <input id="file_btn" type='file' name='file' class="file_btn">
+                <input type='submit' value='Upload' class="upload_btn">
+            </form>
+        {% endif %}
+        <hr>
+        <div class="error">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {%for message in messages %}
+                            <li style="color: red">{{message}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+
+    <div class="test_class_2" id="test_class_2">
+        {% if tables: %}
+            <script>
+                document.getElementById("test_class_2").style.display='block';
+                document.getElementById("test_class_1").style.display='none';
+            </script>
+            <div class="test_class_3">
+                <form action="/save_positions" method='post' onSubmit="return confirm('Are you sure you wish to save the data?');">
+                    <p><strong>Please verify each and every entries to ensure the correctness before uploading the data.</strong> Also, verify the <strong>market value</strong> listed below tallies with the listed market value in the uploaded excel sheet </p>
+                    <hr>
+                    <strong>Market Value</strong>: {{mkt_value}} <input type="submit" value="Save Data">
+                    <hr>
+                </form>
+            </div>
+            <div class="data_panel_2">
+                <div class="table_panel" id="table_panel">
+                    {% for table in tables %}
+                        {{ table|safe }}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
